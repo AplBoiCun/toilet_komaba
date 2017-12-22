@@ -20,7 +20,291 @@
     "optional_functions": false,
     "multi_purpose_button": true,
     "emergency_button": true
+  },
+  "toilet3": {
+    "id": 3,
+    "name": "7号館",
+    "clean": 4,
+    "congestion": 2,
+    "latitude": 35.660753,
+    "longitude": 139.684506,
+    "optional_functions": false,
+    "multi_purpose_button": false,
+    "emergency_button": false
+  },
+  "toilet4": {
+    "id": 4,
+    "name": "10号館",
+    "clean": 2,
+    "congestion": 2,
+    "latitude": 35.660633,
+    "longitude": 139.684951,
+    "optional_functions": true,
+    "multi_purpose_button": true,
+    "emergency_button": true
+  },
+  "toilet5": {
+    "id": 5,
+    "name": "11号館",
+    "clean": 5,
+    "congestion": 2,
+    "latitude": 35.660293,
+    "longitude": 139.684216,
+    "optional_functions": false,
+    "multi_purpose_button": false,
+    "emergency_button": false
+  },
+  "toilet6": {
+    "id": 6,
+    "name": "12号館",
+    "clean": 5,
+    "congestion": 2,
+    "latitude": 35.660293,
+    "longitude": 139.68354,
+    "optional_functions": false,
+    "multi_purpose_button": false,
+    "emergency_button": false
+  },
+  "toilet7": {
+    "id": 7,
+    "name": "13号館",
+    "clean": 5,
+    "congestion": 2,
+    "latitude": 35.660516,
+    "longitude": 139.683712,
+    "optional_functions": false,
+    "multi_purpose_button": false,
+    "emergency_button": false
+  },
+  "toilet8": {
+    "id": 8,
+    "name": "KOMCEE West 2F",
+    "clean": 1,
+    "congestion": 2,
+    "latitude": 35.660378,
+    "longitude": 35.660378,
+    "optional_functions": false,
+    "multi_purpose_button": false,
+    "emergency_button": false
+  },
+  "toilet9": {
+    "id": 9,
+    "name": "KOMCEE West 地下",
+    "clean": 1,
+    "congestion": 3,
+    "latitude": 35.66084,
+    "longitude": 35.66084,
+    "optional_functions": true,
+    "multi_purpose_button": true,
+    "emergency_button": true
+  },
+  "toilet10": {
+    "id": 10,
+    "name": "駒場国際研究棟",
+    "clean": 2,
+    "congestion": 2,
+    "latitude": 35.660947,
+    "longitude": 139.683648,
+    "optional_functions": true,
+    "multi_purpose_button": true,
+    "emergency_button": true
+  },
+  "toilet11": {
+    "id": 11,
+    "name": "KOMCEE East 地下",
+    "clean": 2,
+    "congestion": 2,
+    "latitude": 35.660727,
+    "longitude": 139.68596,
+    "optional_functions": true,
+    "multi_purpose_button": false,
+    "emergency_button": false
+  },
+  "toilet12": {
+    "id": 12,
+    "name": "KOMCEE East 2F",
+    "clean": 2,
+    "congestion": 3,
+    "latitude": 35.660727,
+    "longitude": 139.68596,
+    "optional_functions": true,
+    "multi_purpose_button": false,
+    "emergency_button": false
+  },
+  "toilet13": {
+    "id": 13,
+    "name": "食堂 正面",
+    "clean": 4,
+    "congestion": 4,
+    "latitude": 35.659938,
+    "longitude": 139.68647,
+    "optional_functions": true,
+    "multi_purpose_button": false,
+    "emergency_button": true
+  },
+  "toilet14": {
+    "id": 14,
+    "name": "食堂 裏",
+    "clean": 3,
+    "congestion": 4,
+    "latitude": 35.659637,
+    "longitude": 139.686378,
+    "optional_functions": true,
+    "multi_purpose_button": false,
+    "emergency_button": false
+  },
+  "toilet15": {
+    "id": 15,
+    "name": "イタトマ",
+    "clean": 3,
+    "congestion": 4,
+    "latitude": 35.659437,
+    "longitude": 139.686443,
+    "optional_functions": true,
+    "multi_purpose_button": false,
+    "emergency_button": false
+  },
+  "toilet16": {
+    "id": 16,
+    "name": "図書館",
+    "clean": 3,
+    "congestion": 5,
+    "latitude": 35.659387,
+    "longitude": 139.686893,
+    "optional_functions": true,
+    "multi_purpose_button": true,
+    "emergency_button": true
+  },
+  "toilet17": {
+    "id": 17,
+    "name": "屋外トイレ",
+    "clean": 5,
+    "congestion": 1,
+    "latitude": 35.660472,
+    "longitude": 139.684468,
+    "optional_functions": false,
+    "multi_purpose_button": true,
+    "emergency_button": true
+  },
+  "toilet18": {
+    "id": 18,
+    "name": "JK棟",
+    "clean": 3,
+    "congestion": 4,
+    "latitude": 35.659034,
+    "longitude": 139.684061,
+    "optional_functions": false,
+    "multi_purpose_button": true,
+    "emergency_button": true
+  },
+  "toilet19": {
+    "id": 19,
+    "name": "アドミニ棟",
+    "clean": 1,
+    "congestion": 3,
+    "latitude": 35.659165,
+    "longitude": 139.685289,
+    "optional_functions": true,
+    "multi_purpose_button": true,
+    "emergency_button": true
+  },
+  "toilet20": {
+    "id": 20,
+    "name": "キャンプラ",
+    "clean": 4,
+    "congestion": 2,
+    "latitude": 35.660298,
+    "longitude": 139.687349,
+    "optional_functions": false,
+    "multi_purpose_button": false,
+    "emergency_button": true
+  },
+  "toilet21": {
+    "id": 21,
+    "name": "体育館",
+    "clean": 4,
+    "congestion": 2,
+    "latitude": 35.660642,
+    "longitude": 139.687215,
+    "optional_functions": false,
+    "multi_purpose_button": true,
+    "emergency_button": true
+  },
+  "toilet22": {
+    "id": 22,
+    "name": "学生会館",
+    "clean": 3,
+    "congestion": 2,
+    "latitude": 35.661056,
+    "longitude": 139.686512,
+    "optional_functions": true,
+    "multi_purpose_button": false,
+    "emergency_button": false
+  },
+  "toilet23": {
+    "id": 23,
+    "name": "コミプラ",
+    "clean": 3,
+    "congestion": 1,
+    "latitude": 35.660032,
+    "longitude": 139.687156,
+    "optional_functions": true,
+    "multi_purpose_button": true,
+    "emergency_button": true
+  },
+  "toilet24": {
+    "id": 24,
+    "name": "コミプラ 2F",
+    "clean": 3,
+    "congestion": 1,
+    "latitude": 35.660032,
+    "longitude": 139.687156,
+    "optional_functions": true,
+    "multi_purpose_button": false,
+    "emergency_button": false
+  },
+  "toilet25": {
+    "id": 25,
+    "name": "正門",
+    "clean": null,
+    "congestion": null,
+    "latitude": 35.659165,
+    "longitude": 139.684618,
+    "optional_functions": null,
+    "multi_purpose_button": null,
+    "emergency_button": null
+  },
+  "toilet26": {
+    "id": 26,
+    "name": "生協",
+    "clean": null,
+    "congestion": null,
+    "latitude": 35.660028,
+    "longitude": 139.68714,
+    "optional_functions": null,
+    "multi_purpose_button": null,
+    "emergency_button": null
+  },
+  "toilet27": {
+    "id": 27,
+    "name": "13号館前広場",
+    "clean": null,
+    "congestion": null,
+    "latitude": 35.660232,
+    "longitude": 139.683851,
+    "optional_functions": null,
+    "multi_purpose_button": null,
+    "emergency_button": null
+  },
+  "toilet28": {
+    "id": 28,
+    "name": "裏門",
+    "clean": null,
+    "congestion": null,
+    "latitude": 35.661392,
+    "longitude": 139.687655,
+    "optional_functions": null,
+    "multi_purpose_button": null,
+    "emergency_button": null
   }
 }
-
-/*順次追加します。*/
