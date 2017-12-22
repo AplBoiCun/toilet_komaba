@@ -30,7 +30,7 @@
     
   - 混み具合と綺麗さについての評価
 
-  - 距離で重み付け
+   - 距離で重み付け
       distanceList = []*length(data)
       for i in range(length(data)):
         distanceList[i] = sqrt((location[0]-data[i][toiletLoc_x])^2 + (location[]-data[i][toiletLoc_y])^2) //平方和で距離算出
