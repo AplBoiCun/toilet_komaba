@@ -35,19 +35,7 @@
   </div>
 
   <div id="map"></div>
-      <script>
-        function initMap() {
-          var place = {lat: 35.6598964, lng: 139.6835137};
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 16,
-            center: place
-          });
-          var marker = new google.maps.Marker({
-            position: place,
-            map: map
-          });
-        }
-      </script>
+      <script src = "script.js"></script>
       <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB47qdv5gq38Tvu8cxV4BAtQOEGb50X3yA&callback=initMap">
       </script>
