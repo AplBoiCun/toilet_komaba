@@ -1,0 +1,26 @@
+{
+  "toilet1": {
+    "id": 1,
+    "name": "1号館",
+    "clean": 4,
+    "congestion": 4,
+    "latitude": 35.659845,
+    "longitude": 139.684855,
+    "optional_functions": true,
+    "multi_purpose_button": true,
+    "emergency_button": true
+  },
+  "toilet2": {
+    "id": 2,
+    "name": "5号館",
+    "clean": 2,
+    "congestion": 2,
+    "latitude": 35.661071,
+    "longitude": 139.684437,
+    "optional_functions": false,
+    "multi_purpose_button": true,
+    "emergency_button": true
+  }
+}
+
+/*順次追加します。*/
