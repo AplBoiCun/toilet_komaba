@@ -31,14 +31,15 @@ function dataRanking() {
     [27, "13号館前広場", null, null, 35.660232, 139.683851, null, null],
     [28, "裏門", null, null, 35.661392, 139.687655, null, null]
   ];
-  var ToiletScore = new Array(24);
+
+  var ToiletScore = new Array(24).fill(0);
+
   // 多目的が必要な場合
   var flag1 = document.getElementById("box1").checked;
   if (flag1 == true) {
     for (i = 0; i < 24; i++) {  
       if (data[i][7] == false) {   
-        data[i][2] += 1000;
-        data[i][3] += 1000;
+        ToiletScore[i] += 1000;
       }
     }
   }
@@ -48,8 +49,7 @@ function dataRanking() {
   if (flag2 == true) {
     for (i = 0; i < 24; i++) {  
       if (data[i][6] == false) {   
-        data[i][2] += 1000;
-        data[i][3] += 1000;
+        ToiletScore[i] += 1000;
       }
     }
   }
@@ -61,19 +61,21 @@ function dataRanking() {
       ToiletScore[i] += data[i][2];
     }
   }
-  //混み具合の評価
 
+  //混み具合の評価
   var flag4 = document.getElementById("box4").checked;
   if (flag4 == true) {
-    if (congestion == true) {
-      for (i = 0; i < 24; i++) {
-        ToiletScore[i] += data[i][3];
-      }
+    for (i = 0; i < 24; i++) {
+      ToiletScore[i] += data[i][3];
     }
   }
 
+  document.write("<p>綺麗さと混み具合入力後</p>");
+  document.write("<p>" + ToiletScore + "</p>");
+  document.write("<p>-------------------</</p>");
+
   //現在地の取得
-  var location = [0, 0];
+  var location = [35.659845, 139.684855];
   /*
   var Loc = document.formname.currentPlace.options[].text; //フォームからテキストを取得
   //テキスト名と一致したdata[i][1]のlatitudeとlongitudeを取得したい
@@ -84,7 +86,8 @@ function dataRanking() {
   }
   */
   //距離で重み付け
-  var distanceList = new Array(24);
+  var distanceList = new Array(24).fill(0);
+
   for (i = 0; i < 24; i++) {
     distanceList[i] = Math.sqrt((location[0] - data[i][4]) ^ 2 + (location[1] - data[i][5]) ^ 2);
   }
@@ -95,8 +98,9 @@ function dataRanking() {
     distanceList[i] = (5 * distanceList[i]) / MaxDist; //距離を0-5で正規化、近ければ小さい値になる
     ToiletScore[i] += distanceList[i]; //正規化した距離を点数として総スコアに加算
   }
-
-  //スコアを小さい順にソート
+  document.write("<p>距離を入力後</p>");
+  document.write("<p>" + ToiletScore + "</p>");
+  document.write("<p>-------------------</p>");
 
   //連想配列でスコアと場所を紐付け
   var finalRank = [{
@@ -197,16 +201,24 @@ function dataRanking() {
     }
   ];
 
-  //Scoreの順番でソート
+  //Scoreの順番で昇順にソート
   finalRank.sort(function(a, b) {
     if (a.Score < b.Score) return -1;
     if (a.Score > b.Score) return 1;
     return 0;
   });
-  document.open();
-  document.write("<p>" + "第一位は。。。" + finalRank[0].name + "!" + "</p>");
-  document.write("<p>" + finalRank[1].name + "</p>");
-  document.write("<p>" + finalRank[2].name + "</p>");
-  document.close();
+
+  document.write("<p>finalRankソート後</p>");
+  document.write("<p>1位は" + finalRank[0].name + "、スコアは" + finalRank[0].Score + "</p>");
+  document.write("<p>2位は" + finalRank[1].name + "、スコアは" + finalRank[1].Score + "</p>");
+  document.write("<p>3位は" + finalRank[2].name + "、スコアは" + finalRank[2].Score + "</p>");
+  document.write("<p>4位は" + finalRank[3].name + "、スコアは" + finalRank[3].Score + "</p>");
+  document.write("<p>5位は" + finalRank[4].name + "、スコアは" + finalRank[4].Score + "</p>");
+  document.write("<p>6位は" + finalRank[5].name + "、スコアは" + finalRank[5].Score + "</p>");
+  document.write("<p>7位は" + finalRank[6].name + "、スコアは" + finalRank[6].Score + "</p>");
+  document.write("<p>8位は" + finalRank[7].name + "、スコアは" + finalRank[7].Score + "</p>");
+  document.write("<p>9位は" + finalRank[8].name + "、スコアは" + finalRank[8].Score + "</p>");
+  document.write("<p>10位は" + finalRank[9].name + "、スコアは" + finalRank[9].Score + "</p>");
+  document.write("<p>-------------------</p>");
 
 };
