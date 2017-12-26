@@ -13,23 +13,22 @@
 
   <h1>駒場のおすすめトイレ</h1>
 
-  <form　method="post">
-<p><input type="checkbox" name="riyu" value="1">多目的トイレあり</p>
-<p><input type="checkbox" name="riyu" value="2">温水便座あり</p>
-<p><input type="checkbox" name="riyu" value="3" checked="checked">綺麗さを重視する</p>
-<p><input type="checkbox" name="riyu" value="4" checked="checked">空いている方がいい</p>
-<p>現在地は？
+
+  <input id="box1" type="checkbox">多目的トイレ
+  <input id="box2" type="checkbox">綺麗
+  <input id="box3" type="checkbox">ビデ
+  <input id="box4" type="checkbox">温水便座　<br>
+  <input type="button" value="検索する" onclick="onButtonClick();" />
+<p>現在地は？</p>
   <select>
-    <option value='seimon'>正門</option>
-    <option value='seikyou'>生協</option>
-    <option value='13_goukannmae'>13号館前</option>
-    <option value='uramon'>裏門</option>
+    <option value="seimon">正門</option>
+    <option value="seikyou">生協</option>
+    <option value="13_goukannmae">13号館前</option>
+    <option value="uramon">裏門</option>
   </select>
-</p>
-<p>
-<input type="submit" value="検索する">
-</p>
-</form>
+<input type="button" value="検索する" onclick="onButtonClick();" />
+
+
 
   <div>
     <h2>1位: 5号館</h2>
