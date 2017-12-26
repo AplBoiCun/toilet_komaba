@@ -1,16 +1,16 @@
 function dataRanking() {
-
+  var i;
   var data = [
-  // id, name, clean, congestion, laitude, longitude, optional_functions, multi_purpose_button
-    [1,  "1号館", 4, 4, 35.659845, 139.684855, true, true],
-    [2,  "5号館", 2, 2, 35.661071, 139.684437, false, true],
-    [3,  "7号館", 4, 2, 35.660753, 139.684506, false, false],
-    [4,  "10号館", 2, 2, 35.660633, 139.684951, true, true],
-    [5,  "11号館", 5, 2, 35.660293, 139.684216, false, false],
-    [6,  "12号館", 5, 2, 35.660293, 139.68354 , false, false],
-    [7,  "13号館", 5, 2, 35.660516, 139.683712, false, false],
-    [8,  "KOMCEE West 2F", 1, 2, 35.660378, 139.68596, false, false],
-    [9,  "KOMCEE West 地下", 1, 3, 35.660378, 139.68596, true, true],
+    // id, name, clean, congestion, laitude, longitude, optional_functions, multi_purpose_button
+    [1, "1号館", 4, 4, 35.659845, 139.684855, true, true],
+    [2, "5号館", 2, 2, 35.661071, 139.684437, false, true],
+    [3, "7号館", 4, 2, 35.660753, 139.684506, false, false],
+    [4, "10号館", 2, 2, 35.660633, 139.684951, true, true],
+    [5, "11号館", 5, 2, 35.660293, 139.684216, false, false],
+    [6, "12号館", 5, 2, 35.660293, 139.68354, false, false],
+    [7, "13号館", 5, 2, 35.660516, 139.683712, false, false],
+    [8, "KOMCEE West 2F", 1, 2, 35.660378, 139.68596, false, false],
+    [9, "KOMCEE West 地下", 1, 3, 35.660378, 139.68596, true, true],
     [10, "駒場国際研究棟", 2, 2, 35.660947, 139.683648, true, true],
     [11, "KOMCEE East 地下", 2, 2, 35.660727, 139.68596, true, false],
     [12, "KOMCEE East 2F", 2, 3, 35.660727, 139.68596, true, false],
@@ -32,106 +32,181 @@ function dataRanking() {
     [28, "裏門", null, null, 35.661392, 139.687655, null, null]
   ];
 
-// 多目的が必要な場合
-var flag1 = document.getElementById("box1").checked;
- if (flag1 == true){
-    for (var i = 0; i < 24;i++){
-    if (data[i][7] == false){
-      data[i][2] += 1000  
-      data[i][3] += 1000};
-    };
- }
-
-// 温水便座が必要な場合
-var flag2 = document.getElementById("box2").checked;
- if (flag2 == true){
-    for (var i = 0; i < 24;i++){
-    if (data[i][6] == false){
-      data[i][2] += 1000  
-      data[i][3] += 1000};
-    };
- }
-
- // 綺麗さの評価
-var flag3 = document.getElementById("box3").checked;
- if (flag3 == true){
-    for (var i = 0; i < 24;i++){
-    ToiletScore[i] += data[i][2];
-    };
- }
-//混み具合の評価
-
-var flag4 = document.getElementById("box4").checked;
- if (flag4 == true){
-if(congestion == true){
-  for(var i = 0; i < 24; i++){
-    ToiletScore[i] += data[i][3];}
-  };
-}
-
-//現在地の取得
-var location = [0,0];
-
-var Loc = document.formname.selectname.options[].text; //フォームからテキストを取得
-//テキスト名と一致したdata[i][1]のlatitudeとlongitudeを取得したい
-for(i = 25; i < 29; i++){
-  if(data[i][1] == Loc){
-    location = [data[i][4],data[i][5]];
+  // 多目的が必要な場合
+  var flag1 = document.getElementById("box1").checked;
+  if (flag1 == true) {
+    for (i = 0; i < 24; i++) {  
+      if (data[i][7] == false) {   
+        data[i][2] += 1000;
+        data[i][3] += 1000;
+      }
+    }
   }
-}
 
-//距離で重み付け
-var distanceList = new Array(23);
-for(var i = 0; i < 24; i++){
-  distanceList[i] = Math.sqrt((location[0]-data[i][4])^2 + (location[1]-data[i][5])^2);
-}
-//それぞれの距離を配列に格納
-var MaxDist = Math.max.apply(null, distanceList);
-//距離の最大値
-for(var i = 0; i < 24; i++){
-  distanceList[i] = (5*distanceList[i])/MaxDist;  //距離を0-5で正規化、近ければ小さい値になる
-  ToiletScore[i] += distanceList[i];  //正規化した距離を点数として総スコアに加算
-}
+  // 温水便座が必要な場合
+  var flag2 = document.getElementById("box2").checked;
+  if (flag2 == true) {
+    for (i = 0; i < 24; i++) {  
+      if (data[i][6] == false) {   
+        data[i][2] += 1000;
+        data[i][3] += 1000;
+      }
+    }
+  }
+
+  // 綺麗さの評価
+  var flag3 = document.getElementById("box3").checked;
+  if (flag3 == true) {
+    for (i = 0; i < 24; i++) {  
+      ToiletScore[i] += data[i][2];
+    }
+  }
+  //混み具合の評価
+
+  var flag4 = document.getElementById("box4").checked;
+  if (flag4 == true) {
+    if (congestion == true) {
+      for (i = 0; i < 24; i++) {
+        ToiletScore[i] += data[i][3];
+      }
+    }
+  }
+
+  //現在地の取得
+  var location = [0, 0];
+  /*
+  var Loc = document.formname.currentPlace.options[].text; //フォームからテキストを取得
+  //テキスト名と一致したdata[i][1]のlatitudeとlongitudeを取得したい
+  for(i = 25; i < 29; i++){
+    if(data[i][1] == Loc){
+      location = [data[i][4],data[i][5]];
+    }
+  }
+  */
+  //距離で重み付け
+  var distanceList = new Array(24);
+  for (i = 0; i < 24; i++) {
+    distanceList[i] = Math.sqrt((location[0] - data[i][4]) ^ 2 + (location[1] - data[i][5]) ^ 2);
+  }
+  //それぞれの距離を配列に格納
+  var MaxDist = Math.max.apply(null, distanceList);
+  //距離の最大値
+  for (i = 0; i < 24; i++) {
+    distanceList[i] = (5 * distanceList[i]) / MaxDist; //距離を0-5で正規化、近ければ小さい値になる
+    ToiletScore[i] += distanceList[i]; //正規化した距離を点数として総スコアに加算
+  }
 
   //スコアを小さい順にソート
 
   //連想配列でスコアと場所を紐付け
-  var finalRank = [
-    {name:"1号館", Score: ToiletScore[0]},
-    {name:"5号館", Score: ToiletScore[1]},
-    {name:"7号館", Score: ToiletScore[2]},
-    {name:"10号館", Score: ToiletScore[3]},
-    {name:"11号館", Score: ToiletScore[4]},
-    {name:"12号館", Score: ToiletScore[5]},
-    {name:"13号館", Score: ToiletScore[6]},
-    {name:"KOMCEE West 2F", Score: ToiletScore[7]},
-    {name:"KOMCEE West 地下", Score: ToiletScore[8]},
-    {name:"駒場国際研究棟", Score: ToiletScore[9]},
-    {name:"KOMCEE East 地下", Score: ToiletScore[10]},
-    {name:"KOMCEE East 2F", Score: ToiletScore[11]},
-    {name:"食堂正面", Score: ToiletScore[12]},
-    {name:"食堂裏", Score: ToiletScore[13]},
-    {name:"イタトマ", Score: ToiletScore[14]},
-    {name:"図書館", Score: ToiletScore[15]},
-    {name:"屋外トイレ", Score: ToiletScore[16]},
-    {name:"JK棟", Score: ToiletScore[17]},
-    {name:"アドミニ棟", Score: ToiletScore[18]},
-    {name:"キャンプラ", Score: ToiletScore[19]},
-    {name:"体育館", Score: ToiletScore[20]},
-    {name:"学生会館", Score: ToiletScore[21]},
-    {name:"コミプラ 1F", Score: ToiletScore[22]},
-    {name:"コミプラ 2F", Score: ToiletScore[23]}
+  var finalRank = [{
+      name: "1号館",
+      Score: ToiletScore[0]
+    },
+    {
+      name: "5号館",
+      Score: ToiletScore[1]
+    },
+    {
+      name: "7号館",
+      Score: ToiletScore[2]
+    },
+    {
+      name: "10号館",
+      Score: ToiletScore[3]
+    },
+    {
+      name: "11号館",
+      Score: ToiletScore[4]
+    },
+    {
+      name: "12号館",
+      Score: ToiletScore[5]
+    },
+    {
+      name: "13号館",
+      Score: ToiletScore[6]
+    },
+    {
+      name: "KOMCEE West 2F",
+      Score: ToiletScore[7]
+    },
+    {
+      name: "KOMCEE West 地下",
+      Score: ToiletScore[8]
+    },
+    {
+      name: "駒場国際研究棟",
+      Score: ToiletScore[9]
+    },
+    {
+      name: "KOMCEE East 地下",
+      Score: ToiletScore[10]
+    },
+    {
+      name: "KOMCEE East 2F",
+      Score: ToiletScore[11]
+    },
+    {
+      name: "食堂正面",
+      Score: ToiletScore[12]
+    },
+    {
+      name: "食堂裏",
+      Score: ToiletScore[13]
+    },
+    {
+      name: "イタトマ",
+      Score: ToiletScore[14]
+    },
+    {
+      name: "図書館",
+      Score: ToiletScore[15]
+    },
+    {
+      name: "屋外トイレ",
+      Score: ToiletScore[16]
+    },
+    {
+      name: "JK棟",
+      Score: ToiletScore[17]
+    },
+    {
+      name: "アドミニ棟",
+      Score: ToiletScore[18]
+    },
+    {
+      name: "キャンプラ",
+      Score: ToiletScore[19]
+    },
+    {
+      name: "体育館",
+      Score: ToiletScore[20]
+    },
+    {
+      name: "学生会館",
+      Score: ToiletScore[21]
+    },
+    {
+      name: "コミプラ 1F",
+      Score: ToiletScore[22]
+    },
+    {
+      name: "コミプラ 2F",
+      Score: ToiletScore[23]
+    }
   ];
 
   //Scoreの順番でソート
-  finalRank.sort(function (a, b){
-      if (a.Score < b.Score) return -1;
-      if (a.Score > b.Score) return 1;
-      return 0;
+  finalRank.sort(function(a, b) {
+    if (a.Score < b.Score) return -1;
+    if (a.Score > b.Score) return 1;
+    return 0;
   });
-  console.log(finalRank)
+  document.open();
   document.write("<p>" + "第一位は。。。" + finalRank[0].name + "!" + "</p>");
   document.write("<p>" + finalRank[1].name + "</p>");
   document.write("<p>" + finalRank[2].name + "</p>");
+  document.close();
 
 };
