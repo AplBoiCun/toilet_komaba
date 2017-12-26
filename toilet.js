@@ -4,26 +4,40 @@ var ToiletScore = new Array(data.length-1); //スコアリストを準備、ス�
 // <p>チェックされた部分に対応するモジュールを動かす</p>
 
 // 多目的が必要な場合
+var flag1 = document.getElementById("").checked;
+ if (flag1 == true){
     for (var i = 0; i < data.length;i++){
     if (data[i][7] == false){
       data[i][2] += 1000  
-      data[i][3] += 1000};}
+      data[i][3] += 1000};
+    };
+ }
 
 // 温水便座が必要な場合
+var flag2 = document.getElementById("").checked;
+ if (flag2 == true){  
     for (var i = 0; i < data.length;i++){
     if (data[i][6] == false){
       data[i][2] += 1000  
-      data[i][3] += 1000};}
+      data[i][3] += 1000};
+    };
+ }
 
  // 綺麗さの評価
+var flag3 = document.getElementById("").checked;
+ if (flag3 == true){
     for (var i = 0; i < data.length;i++){
-    ToiletScore[i] += data[i][2];}
+    ToiletScore[i] += data[i][2];
+    };
+ }
 //混み具合の評価
 
+var flag4 = document.getElementById("").checked;
+ if (flag4 == true){
 if(congestion == true){
   for(var i = 0; i < data.length; i++){
-    ToiletScore[i] += data[i][3];
-  }
+    ToiletScore[i] += data[i][3];}
+  };
 }
 
 //現在地の取得
@@ -32,7 +46,6 @@ location = [];  まだ参照先とかわからんので保留
 */
 
 //距離で重み付け
-
 var distanceList = new Array(data.length - 1);
 for(var i = 0; i < data.length; i++){
   distanceList[i] = Math.sqrt((location[0]-data[i][4])^2 + (location[1]-data[i][5])^2);
