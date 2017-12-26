@@ -60,3 +60,6 @@ ToiletScore = []* length(data) //スコアリストを準備、スコアが低�
 
    //ToiletScoreが低い順にデータを並び替えて出力、上位数件で大丈夫かな？
  ```
+
+x = 1
+y = 2
