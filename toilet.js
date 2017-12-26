@@ -118,7 +118,7 @@ for(var i = 0; i < data.length; i++){
   ];
 
   //Scoreの順番でソート
-  finalRank.sort((a, b){
+  finalRank.sort(function (a, b){
       if (a.Score < b.Score) return -1;
       if (a.Score > b.Score) return 1;
       return 0;
