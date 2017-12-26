@@ -2,10 +2,10 @@
 
 - データセットを入力
 ```
-    data = [][] #綺麗さ、混み具合、温水便座のboolean、多目的のboolean、toiletLoc_x(float)、toiletLoc_y(float)   //トイレの属性
+    data = [][] #id、名前、綺麗さ、混み具合、toiletLoc_x(float)、toiletLoc_y(float)、温水便座のboolean、多目的のboolean、   //トイレの属性
 
 ToiletScore = []* length(data) //スコアリストを準備、スコアが低いほどよいというコンセプト
-number_checked =    //綺麗さ、混み具合、近さのうちクリックされたチェックボックス数
+
 ```
 
 チェックされた部分に対応するモジュールを動かす
@@ -13,9 +13,9 @@ number_checked =    //綺麗さ、混み具合、近さのうちクリックさ
 - 多目的が必要な場合  
 ```
   for i in range(length(data)):
-    if data[i][3] == False:
-      data[i][0] += 1000  
-      data[i][1] += 1000
+    if data[i][7] == False:
+      data[i][2] += 1000  
+      data[i][3] += 1000
   //数をクソでかくすることでスコアを悪化させる
   //ただしこれだと現在位置の影響を消せないのでごく稀に非多目的のものが出てきてしまうかもしれない
 ```
@@ -23,9 +23,9 @@ number_checked =    //綺麗さ、混み具合、近さのうちクリックさ
 - 温水便座が必要な場合  
 ```
   for i in range(length(data)):
-    if data[i][2] == False:
-      data[i][0] += 1000  
-      data[i][1] += 1000
+    if data[i][6] == False:
+      data[i][2] += 1000  
+      data[i][3] += 1000
   
   //数をクソでかくすることでスコアを悪化させる
   //ただしこれだと現在位置の影響を消せないのでごく稀に非温水便座のものが出てきてしまうかもしれない
@@ -33,12 +33,12 @@ number_checked =    //綺麗さ、混み具合、近さのうちクリックさ
 - 綺麗さの評価
 ```
   for i in range(length(data)):
-    ToiletScore[i] += data[i][0]
+    ToiletScore[i] += data[i][]2
 ```
 - 混み具合の評価
 ```
   for i in range(length(data)):
-    ToiletScore[i] += data[i][1]
+    ToiletScore[i] += data[i][3]
 ```
 - 現在地を選択肢形式で入力（正門、生協、13号館前広場、裏門（一信前））
 ```
@@ -48,7 +48,7 @@ number_checked =    //綺麗さ、混み具合、近さのうちクリックさ
 ```
     distanceList = [] * length(data)
     for i in range(length(data)):
-      distanceList[i] = sqrt((location[0]-data[i][toiletLoc_x])^2 + (location[]-data[i][toiletLoc_y])^2) //平方和で距離算出
+      distanceList[i] = sqrt((location[0]-data[i][4])^2 + (location[1]-data[i][5])^2) //平方和で距離算出
     MaxDist = max(distanceList)
     for i in range(length(data)):
       distanceList[i] = 5 * distanceList[i]/MaxDist    //距離を0〜5で正規化、近ければ小さい値になる
