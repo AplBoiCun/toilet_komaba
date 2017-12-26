@@ -31,7 +31,7 @@ function dataRanking() {
     [27, "13号館前広場", null, null, 35.660232, 139.683851, null, null],
     [28, "裏門", null, null, 35.661392, 139.687655, null, null]
   ];
-
+  var ToiletScore = new Array(24);
   // 多目的が必要な場合
   var flag1 = document.getElementById("box1").checked;
   if (flag1 == true) {
