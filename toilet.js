@@ -197,7 +197,7 @@ function dataRanking() {
     if (a.Score > b.Score) return 1;
     return 0;
   });
-
+  console.log(finalRank)
   document.write("<p>" + "第一位は。。。" + finalRank[0].name + "!" + "</p>");
   document.write("<p>" + finalRank[1].name + "</p>");
   document.write("<p>" + finalRank[2].name + "</p>");
