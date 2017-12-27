@@ -1,0 +1,8 @@
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('http://mariapngt.com/wp-content/uploads/2017/06/image-of-bathroom-with-inspiration-hd-images.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
