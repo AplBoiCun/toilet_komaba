@@ -1,20 +1,108 @@
 body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
+body, html {width: 100%;
+  height: 100%}
 body {
     background: url("bathroom.jpg");
     background-size: cover;
-    }
-    .square_btn {
-        display: inline-block;
-        padding: 0.3em 1em;
-        text-decoration: none;
-        color: #67c5ff;
-        border: solid 2px #67c5ff;
-        border-radius: 3px;
-        transition: .4s;
+    font-family: Merriweather, 'Helvetica Neue', Arial, sans-serif
     }
 
-    .square_btn:hover {
-        background: #67c5ff;
-        color: white;
+    hr {
+      max-width: 200px;
+      border-width: 3px;
+      border-color: #f05f40
+    }
+
+    hr.light {
+      border-color: #fff
+    }
+
+    a {
+      color: #f05f40;
+      -webkit-transition: all .2s;
+      -moz-transition: all .2s;
+      transition: all .2s
+    }
+
+    a:hover {
+      color: #f05f40
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif
+    }
+
+    .bg-primary {
+      background-color: #f05f40 !important
+    }
+
+    .bg-dark {
+      background-color: #212529 !important
+    }
+
+    .text-faded {
+      color: rgba(255, 255, 255, .7)
+    }
+
+
+    body {
+      -webkit-tap-highlight-color: #212529
+    }
+
+    header.masthead {
+      padding-top: 10rem;
+      padding-bottom: calc(10rem - 56px);
+      background-image: url(../img/header.jpg);
+      background-position: center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover
+    }
+
+    header.masthead hr {
+      margin-top: 30px;
+      margin-bottom: 30px
+    }
+
+    header.masthead h1 {
+      font-size: 2rem
+    }
+
+    header.masthead p {
+      font-weight: 300
+    }
+
+    .text-primary {
+      color: #f05f40 !important
+    }
+
+    .btn {
+      font-weight: 700;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 300px;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif
+    }
+
+    .btn-xl {
+      padding: 1rem 2rem
+    }
+
+    .btn-primary {
+      background-color: #f05f40;
+      border-color: #f05f40
+    }
+
+    .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+      color: #fff;
+      background-color: #ee4b28 !important
+    }
+
+    .btn-primary:active, .btn-primary:focus {
+      box-shadow: 0 0 0 .2rem rgba(240, 95, 64, .5) !important
+    }
+    .box{
+      background: rgba(255,255,255,0.3);
+      padding: 1em 1em 1em;
     }
