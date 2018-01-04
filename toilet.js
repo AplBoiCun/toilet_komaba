@@ -73,14 +73,14 @@ function dataRanking(){
   //現在地の取得
   var location = [35.659845, 139.684855];
   /*
-  var Loc = document.formname.currentPlace.options[].text; //フォームからテキストを取得
+  var Loc = form.currentPlace.value; //フォームからテキストを取得
   //テキスト名と一致したdata[i][1]のlatitudeとlongitudeを取得したい
   for(i = 25; i < 29; i++){
     if(data[i][1] == Loc){
       location = [data[i][4],data[i][5]];
     }
   }
-  */
+*/
   //距離で重み付け
   var distanceList = new Array(24).fill(0);
 
