@@ -1,4 +1,4 @@
-function dataRanking() {
+function dataRanking(){
   var i;
   var data = [
     // id, name, clean, congestion, laitude, longitude, optional_functions, multi_purpose_button
@@ -70,21 +70,17 @@ function dataRanking() {
     }
   }
 
-  document.write("<p>綺麗さと混み具合入力後</p>");
-  document.write("<p>" + ToiletScore + "</p>");
-  document.write("<p>-------------------</</p>");
-
   //現在地の取得
   var location = [35.659845, 139.684855];
   /*
-  var Loc = document.formname.currentPlace.options[].text; //フォームからテキストを取得
+  var Loc = form.currentPlace.value; //フォームからテキストを取得
   //テキスト名と一致したdata[i][1]のlatitudeとlongitudeを取得したい
   for(i = 25; i < 29; i++){
     if(data[i][1] == Loc){
       location = [data[i][4],data[i][5]];
     }
   }
-  */
+*/
   //距離で重み付け
   var distanceList = new Array(24).fill(0);
 
@@ -98,9 +94,6 @@ function dataRanking() {
     distanceList[i] = (5 * distanceList[i]) / MaxDist; //距離を0-5で正規化、近ければ小さい値になる
     ToiletScore[i] += distanceList[i]; //正規化した距離を点数として総スコアに加算
   }
-  document.write("<p>距離を入力後</p>");
-  document.write("<p>" + ToiletScore + "</p>");
-  document.write("<p>-------------------</p>");
 
   //連想配列でスコアと場所を紐付け
   var finalRank = [{
@@ -208,17 +201,12 @@ function dataRanking() {
     return 0;
   });
 
-  document.write("<p>finalRankソート後</p>");
-  document.write("<p>1位は" + finalRank[0].name + "、スコアは" + finalRank[0].Score + "</p>");
-  document.write("<p>2位は" + finalRank[1].name + "、スコアは" + finalRank[1].Score + "</p>");
-  document.write("<p>3位は" + finalRank[2].name + "、スコアは" + finalRank[2].Score + "</p>");
-  document.write("<p>4位は" + finalRank[3].name + "、スコアは" + finalRank[3].Score + "</p>");
-  document.write("<p>5位は" + finalRank[4].name + "、スコアは" + finalRank[4].Score + "</p>");
-  document.write("<p>6位は" + finalRank[5].name + "、スコアは" + finalRank[5].Score + "</p>");
-  document.write("<p>7位は" + finalRank[6].name + "、スコアは" + finalRank[6].Score + "</p>");
-  document.write("<p>8位は" + finalRank[7].name + "、スコアは" + finalRank[7].Score + "</p>");
-  document.write("<p>9位は" + finalRank[8].name + "、スコアは" + finalRank[8].Score + "</p>");
-  document.write("<p>10位は" + finalRank[9].name + "、スコアは" + finalRank[9].Score + "</p>");
-  document.write("<p>-------------------</p>");
+  var first = document.getElementById("first");
+  var second = document.getElementById("second");
+  var third = document.getElementById("third");
+  first.innerHTML = "<h4><strong>1位: "+ finalRank[0].name + "</strong></h4>";
+  second.innerHTML = "<h4><strong>2位: " + finalRank[1].name + "</strong></h4>";
+  third.innerHTML = "<h4><strong>3位: " + finalRank[2].name + "</strong></h4>";
 
-};
+
+}
