@@ -1,8 +1,20 @@
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
-.bgimg {
-    background-image: url('http://mariapngt.com/wp-content/uploads/2017/06/image-of-bathroom-with-inspiration-hd-images.jpg');
-    min-height: 100%;
-    background-position: center;
+body {
+    background: url("bathroom.jpg");
     background-size: cover;
-}
+    }
+    .square_btn {
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        color: #67c5ff;
+        border: solid 2px #67c5ff;
+        border-radius: 3px;
+        transition: .4s;
+    }
+
+    .square_btn:hover {
+        background: #67c5ff;
+        color: white;
+    }

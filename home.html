@@ -2,25 +2,51 @@
 <html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" type="text/css" href="style.css">
+<link href="creative.min.css" rel="stylesheet">
 <head>
   <title>駒場トイレおすすめアプリ</title>
-  <style>
-    #map {
-      height: 400px;
-      width: 100%;
-    }
-  </style>
 </head>
 
 <body>
-  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="text-center container-fluid my-auto">
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row box">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase" style = "font-size:2em">
+              <strong>駒場のおすすめトイレ</strong>
+            </h1>
+            <hr>
+          </div>
+          <h4 style = "padding:0.1em 1em 0.1em">現在地は？</h4>
+          <div style = "padding:0.1em 1em 1em">
+          <select name="currentPlace">
+            <option value="seimon">正門</option>
+            <option value="seikyou">生協</option>
+            <option value="13_goukannmae">13号館前</option>
+            <option value="uramon">裏門</option>
+          </select><br>
+          </div>
+          <div style = "padding:0.1em 1em 1em">
+          <input id="box1" type="checkbox">多目的トイレあり
+          <input id="box2" type="checkbox">暖房便座あり
+          <input id="box3" type="checkbox">綺麗なトイレがいい
+          <input id="box4" type="checkbox">混んでいないトイレがいい<br>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <button class="btn btn-primary btn-xl" href="#about" type="submit" onclick="dataRanking();"><i class="fa fa-search"></i> 検索する</button>
+          </div>
+        </div>
+      </div>
+    </header>
 
 
-  <div class="w3-display-middle">
-  <h1>駒場のおすすめトイレ</h1>
+
+  <h1 style="padding-top:10%; padding-bottom:2%" align = "200px">駒場のおすすめトイレ</h1>
 
 
   <input id="box1" type="checkbox">多目的トイレあり
@@ -34,10 +60,11 @@
     <option value="seikyou">生協</option>
     <option value="13_goukannmae">13号館前</option>
     <option value="uramon">裏門</option>
-  </select>
-  <input type="button" value="検索する" onclick="dataRanking();" />
+  </select><br>
+  <div class = "row">
+  <button class = "col-lg-8 col-lg-offset-2" type="submit" onclick="dataRanking();"><i class="fa fa-search"></i> 検索する</button>
+  </div>
   <script src="toilet.js"></script>
-</div>
 </div>
 </body>
 
