@@ -70,17 +70,29 @@ function dataRanking(){
     }
   }
 
-  //現在地の取得
-  var location = [35.659845, 139.684855];
-  /*
-  var Loc = form.currentPlace.value; //フォームからテキストを取得
-  //テキスト名と一致したdata[i][1]のlatitudeとlongitudeを取得したい
-  for(i = 25; i < 29; i++){
-    if(data[i][1] == Loc){
-      location = [data[i][4],data[i][5]];
-    }
+  // 現在地取得
+  var location;
+  var current_place1 = document.getElementById("正門");
+  var current_place2 = document.getElementById("生協");
+  var current_place3 = document.getElementById("13号館前");
+  var current_place4 = document.getElementById("裏門");
+
+  if (current_place1.selected) {
+    location = [35.659845, 139.684855];
+  } else {
+      if (current_place2.selected) {
+        location = [35.660028, 139.68714];
+      } else {
+          if (current_place3.selected) {
+            location = [35.660232, 139.683851];
+          } else {
+            if (current_place4.selected) {
+              location = [35.661392, 139.687655];
+            }
+          }
+      }
   }
-*/
+
   //距離で重み付け
   var distanceList = new Array(24).fill(0);
 
